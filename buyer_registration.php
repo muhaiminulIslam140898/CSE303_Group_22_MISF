@@ -1,7 +1,7 @@
 <?php
-require 'db_config.php'; // Include your database configuration file
+require 'db_config.php'; 
 
-// Handle form submission
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['buyer_name'];
     $email = $_POST['buyer_email'];
@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $location = $_POST['location'];
     $password = $_POST['buyer_password'];
 
-    // Insert the buyer data into the database without password hashing
+    
     $sql = "INSERT INTO buyers (name, email, category, contact_info, location, password) VALUES (?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ssssss", $name, $email, $category, $contactInfo, $location, $password);
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error: " . $stmt->error;
     }
 
-    // Close the statement and connection
+    
     $stmt->close();
     $conn->close();
 }
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <main>
-        <!-- Buyer Registration Form -->
+        
         <section class="registration-form">
             <h2>Sign up as a Buyer</h2>
             <form method="POST">

@@ -32,7 +32,7 @@ if (isset($_SESSION['user_id'])) {
     exit();
 }
 
-// Fetch all crops from the database
+
 $sql_crops = "SELECT id, name, price FROM crops";
 $result_crops = $conn->query($sql_crops);
 
