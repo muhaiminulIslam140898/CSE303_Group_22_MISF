@@ -1,7 +1,7 @@
 <?php
-require 'db_config.php'; // Include your database configuration file
+require 'db_config.php';
 
-// Handle form submission
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['seller_name'];
     $email = $_POST['seller_email'];
@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $location = $_POST['location'];
     $inputs = $_POST['inputs'];
 
-    // Insert the seller data into the database
+
     $sql = "INSERT INTO sellers (name, email, password, contact, location, inputs) VALUES (?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ssssss", $name, $email, $password, $contact, $location, $inputs);
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error: " . $stmt->error;
     }
 
-    // Close the statement and connection
+
     $stmt->close();
     $conn->close();
 }
@@ -40,7 +40,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 
     <main>
-        <!-- Seller Registration Form -->
         <section class="registration-form">
             <h2>Register as a Seller</h2>
             <form method="POST" action="">
