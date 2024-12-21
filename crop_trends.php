@@ -11,7 +11,7 @@
 
 <body>
 
-    <!-- Header Section -->
+
     <header>
         <h1>📊 Crop Trends 📊</h1>
     </header>
@@ -24,7 +24,7 @@
             <li><a href="feedback.php">Submit Feedback</a></li>
         </ul>
     </nav>
-    <!-- Main Content -->
+
     <main>
         <section id="trend-analysis">
             <h2>Crop Prices by Season</h2>
